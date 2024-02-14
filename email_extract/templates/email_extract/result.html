@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-4">Extracted Emails</h1>
+    <ul class="list-group mx-auto" style="max-width: 400px;">
+        {% for email in emails %}
+        <li class="list-group-item">{{ email }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

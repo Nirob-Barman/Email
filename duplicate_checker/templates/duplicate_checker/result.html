@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Duplicate Emails Result</h1>
+
+    {% if duplicate_emails_in_file %}
+    <div class="alert alert-danger" role="alert">
+        <h2>Duplicate Emails in the File:</h2>
+        <ul>
+            {% for email in duplicate_emails_in_file %}
+            <li>{{ email }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <div class="alert alert-success" role="alert">
+        <p>No duplicate emails found in the file.</p>
+    </div>
+    {% endif %}
+
+    <h2>All Emails in the File:</h2>
+    <ul class="list-group">
+        {% for email in emails %}
+        <li class="list-group-item">{{ email }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

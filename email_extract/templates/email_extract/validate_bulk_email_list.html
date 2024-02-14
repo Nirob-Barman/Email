@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Validate Bulk Email List</h2>
+
+{% if success_message %}
+<p>{{ success_message }}</p>
+{% endif %}
+
+<form method="post" enctype="multipart/form-data" action="{% url 'validate_bulk_email_list' %}">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Validate Bulk Email List</button>
+</form>
+
+{% if bulk_email_list %}
+<h3>Processed Email List for '{{ bulk_email_list.name }}'</h3>
+<ul>
+    {% for email in bulk_email_list.emails.all %}
+    <li>{{ email.email }} - {% if email.is_valid %}Valid{% else %}Invalid{% endif %}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Check for Duplicate Emails</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ file_form.as_p }}
+    {{ format_form.as_p }}
+    <button type="submit">Check</button>
+</form>
+{% endblock %}

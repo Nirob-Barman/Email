@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-4">Email Validation Result</h1>
+    <div class="card mx-auto" style="max-width: 400px;">
+        <div class="card-body">
+            <p class="card-text"><strong>Email:</strong> {{ email }}</p>
+            <p class="card-text">
+                <strong>Is Valid:</strong>
+                <span class="{% if is_valid %}text-success{% else %}text-danger{% endif %}">
+                    {% if is_valid %}Yes{% else %}No{% endif %}
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
