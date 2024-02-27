@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-5u+x+^3x)zrk-syi2kx#57-=4yskrr2gm^69*i)pl+ya6p+yqi
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['https://email-fuy9.onrender.com', 'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = [
+    'https://email-fuy9.onrender.com', 'https://*.127.0.0.1']
 
 # Application definition
 

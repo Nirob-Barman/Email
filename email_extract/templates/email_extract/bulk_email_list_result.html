@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Bulk Email List Result for {{ name }}</h1>
+
+    {% if email_list %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for email_info in email_list %}
+            <tr>
+                <td>{{ email_info.email }}</td>
+                <td>{% if email_info.is_valid %}Valid{% else %}Invalid{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No emails found in the list.</p>
+    {% endif %}
+
+
+    <p>Bulk Email List '{{ name }}' has been processed.</p>
+</div>
+{% endblock %}
