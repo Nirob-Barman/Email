@@ -36,8 +36,7 @@ def email_extractor(request):
 
 def validate_email(email):
     # Make API request to validate email
-    api_url = f"https://api.ValidEmail.net/?email={
-        email}&token=605040dd66604f58a5f3d6d7677bf166"
+    api_url = f"https://api.ValidEmail.net/?email={email}&token=605040dd66604f58a5f3d6d7677bf166"
     response = requests.get(api_url)
     # Print the entire API response
     # print(response.text)
